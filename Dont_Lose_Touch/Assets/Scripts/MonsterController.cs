@@ -5,11 +5,11 @@ using UnityEngine;
 public class MonsterController : MonoBehaviour
 {
     private Rigidbody rb;
-    public GameObject player;
-    public float speed = 10;
+    public float speed = 5;
+    private GameObject playerTransform;
 
     //how long we want the monster to live
-    public float lifeSpan = 30;
+    public float lifeSpan = 60;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +17,13 @@ public class MonsterController : MonoBehaviour
         //destroys monster
         StartCoroutine(DestroyMonster());
         rb = GetComponent<Rigidbody>();
+        playerTransform = GameObject.Find("VanillaPlayer");
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.transform.position, speed * Time.deltaTime);
     }
 
     //destroys monster after however many seconds we assign to lifeSpan
