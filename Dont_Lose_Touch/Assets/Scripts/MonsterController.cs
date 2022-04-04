@@ -6,6 +6,7 @@ public class MonsterController : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed = 5;
+    //get the play position
     private GameObject playerTransform;
 
     //how long we want the monster to live
@@ -31,5 +32,9 @@ public class MonsterController : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeSpan);
         Destroy(gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        // need to make it so it "kills" the player going to gameover
     }
 }

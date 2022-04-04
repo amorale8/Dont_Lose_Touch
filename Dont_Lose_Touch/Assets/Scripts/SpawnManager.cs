@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    /// <summary>
+    /// I want to make it so that it can only spawn one monster 
+    /// at a time but I don't know how to yet
+    /// </summary>
     public GameObject monsterPrefab;
 
-    //change to a range or specific points later one
-    //could assign to an assest in game 
+    //this will be changed to the spawn points (gameobject)
     private Vector3 spawnPos = new Vector3(5, 1, 0);
 
     public float startDelay= 1;
@@ -23,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     {
         
     }
+
     void SpawnMonster()
     {
         Instantiate(monsterPrefab, spawnPos, monsterPrefab.transform.rotation);
