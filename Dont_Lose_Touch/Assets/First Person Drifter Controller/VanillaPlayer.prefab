@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 11400014}
   - component: {fileID: 11400010}
   - component: {fileID: 1500017917}
+  - component: {fileID: 1565930516}
   m_Layer: 0
   m_Name: VanillaPlayer
   m_TagString: Player
@@ -288,3 +289,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 5988777931967087107, guid: f1fb2061762b4554a92d5a1e43683d14, type: 3}
+--- !u!136 &1565930516
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

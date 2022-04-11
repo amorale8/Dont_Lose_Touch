@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent (typeof (CharacterController))]
 public class FirstPersonDrifter: MonoBehaviour
@@ -153,4 +154,16 @@ public class FirstPersonDrifter: MonoBehaviour
     {
         //print ("Ouch! Fell " + fallDistance + " units!");   
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Monster")
+        {
+            SceneManager.LoadScene("Game Over");
+        }
+        if (other.gameObject.tag == "End")
+        {
+            SceneManager.LoadScene("Game Over");
+        }
+    } 
 }

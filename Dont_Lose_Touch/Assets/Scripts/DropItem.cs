@@ -5,6 +5,7 @@ using UnityEngine;
 public class DropItem : MonoBehaviour
 {
     public GameObject itemPrefab;
+    private int counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,16 @@ public class DropItem : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             Instantiate(itemPrefab, transform.position, itemPrefab.transform.rotation);
+            counter++;
+            if (counter == 5)
+            {
+                TurnOff();
+            }
         }
+    }
+
+    public void TurnOff()
+    {
+        this.enabled = false;
     }
 }
